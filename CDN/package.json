@@ -3,7 +3,9 @@
   "version": "1.7.2",
   "description": "Zoom sample app for web client WebSDK",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "@zoomus/websdk": "^1.7.2"
+  },
   "devDependencies": {
     "concurrently": "^3.5.1",
     "http-server": "^0.12.1"
