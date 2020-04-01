@@ -1,16 +1,23 @@
 (function(){
+ZoomMtg.setZoomJSLib('node_modules/@zoomus/websdk/dist/lib', '/av');
+// For CDN version default
+ZoomMtg.setZoomJSLib('https://dmogdx0jrul3u.cloudfront.net/1.7.2/lib', '/av');
+// For Global use source.zoom.us:
+ZoomMtg.setZoomJSLib('https://source.zoom.us/1.7.2/lib', '/av');
+// In China use jssdk.zoomus.cn:
+ZoomMtg.setZoomJSLib('https://jssdk.zoomus.cn/1.7.2/lib', '/av');
 
 	console.log('checkSystemRequirements');
 	console.log(JSON.stringify(ZoomMtg.checkSystemRequirements()));
 
     // it's option if you want to change the WebSDK dependency link resources. setZoomJSLib must be run at first
     // if (!china) ZoomMtg.setZoomJSLib('https://source.zoom.us/1.7.2/lib', '/av'); // CDN version default
-    // else ZoomMtg.setZoomJSLib('https://jssdk.zoomus.cn/1.7.2/lib', '/av'); // china cdn option 
+    // else ZoomMtg.setZoomJSLib('https://jssdk.zoomus.cn/1.7.2/lib', '/av'); // china cdn option
     // ZoomMtg.setZoomJSLib('http://localhost:9999/node_modules/@zoomus/websdk/dist/lib', '/av'); // Local version default, Angular Project change to use cdn version
     ZoomMtg.preLoadWasm();
 
     ZoomMtg.prepareJssdk();
-    
+
     var API_KEY = 'YOUR_API_KEY';
 
     /**
